@@ -63,13 +63,13 @@ const WhySection = () => {
               key={reason.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              transition={{ duration: 0.01, delay: 0.01 + index * 0.01 }}
               whileHover={{ y: -5 }}
               className="text-center group cursor-default"
             >
               <motion.div 
                 className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-secondary/80 flex items-center justify-center border border-border group-hover:border-foreground/30 transition-all duration-300"
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.1, rotate: 3 }}
               >
                 <reason.icon className="w-7 h-7 text-foreground" strokeWidth={1.5} />
               </motion.div>

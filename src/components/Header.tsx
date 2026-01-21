@@ -44,16 +44,29 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             <motion.a 
               href="#" 
-              className="flex items-center gap-3 relative z-50"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-3 relative z-50 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <img 
+              <motion.img 
                 src={myLogo} 
                 alt="Nexfolia Studio" 
-                className="h-10 md:h-12 w-auto invert"
+                className="h-10 md:h-12 w-auto"
+                
+                whileHover={{
+                  scale: 1.02,
+                  // rotate: 1,
+                  boxShadow: "0px 0px 18px rgba(255,255,255,0.20)"
+                }}
+
+                transition={{
+                  type: "spring",
+                  stiffness: 1000,
+                  damping: 20
+                }}
               />
             </motion.a>
+
             
             <nav className="hidden md:flex items-center gap-10">
               {navItems.map((item, i) => (
