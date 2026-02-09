@@ -10,7 +10,7 @@ const projects = [
         description:
             "Visually striking posters, banners, and digital creatives designed to attract attention and communicate clearly.",
         image: null,
-        video: "public/Website Animations (1).mp4", // add video here
+        video: "/Website Animations (1).mp4", // add video here
         tag: "Designs",
         link: "#",
     },
@@ -19,7 +19,7 @@ const projects = [
         description:
             "A modern portfolio website crafted to showcase your skills, projects, and journey in a professional way.",
         image: null,
-        video: "public/Website Animations (2).mp4",
+        video: "/Website Animations (2).mp4",
         tag: "Portfolios",
         link: "#",
     },
@@ -28,7 +28,7 @@ const projects = [
         description:
             "A clean and scalable website built for early-stage startups to present ideas, build trust, and convert visitors.",
         image: null,
-        video: "public/Website Animations (3).mp4",
+        video: "/Website Animations (3).mp4",
         tag: "Websites",
         link: "#",
     },
