@@ -146,7 +146,7 @@ const ContactSection = () => {
 
               <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
                 Student entrepreneur focused on helping individuals build a strong and
-                professional digital presence through clean portfolio decks and
+                professional digital presence through clean professional designs and
                 personalized websites.
               </p>
 
