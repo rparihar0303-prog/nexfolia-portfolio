@@ -1,26 +1,51 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Briefcase, FileText } from "lucide-react";
+import { useInView } from "framer-motion";
+import {
+  Globe,
+  Layout,
+  FileText,
+  Palette,
+  Linkedin,
+  Sparkles,
+} from "lucide-react";
 
 const services = [
   {
     icon: Globe,
-    title: "Personal Websites",
+    title: "Websites & Portfolios",
     description:
-      "Clean, minimal personal sites that showcase who you are. Perfect for professionals looking to establish their online presence.",
-  },
-  {
-    icon: Briefcase,
-    title: "Portfolio Websites",
-    description:
-      "Modern portfolio platforms for students, creators, and YouTubers. Designed to highlight your best work beautifully.",
+      "Personal, business, and portfolio websites built with clean design and clear structure to showcase your work professionally.",
   },
   {
     icon: FileText,
-    title: "Portfolio Decks",
+    title: "Portfolio Decks & Presentations",
     description:
-      "Professional PDF and PPT portfolio decks that impress. Ideal for job applications, client pitches, and presentations.",
+      "High-impact PDF and PPT portfolio decks, posters, banners, and presentation designs for jobs, clients, and pitches.",
+  },
+  {
+    icon: Palette,
+    title: "Branding & Identity",
+    description:
+      "Logo design and brand identity systems that define your visual presence and make your brand instantly recognizable.",
+  },
+  {
+    icon: Layout,
+    title: "Social Media Creatives",
+    description:
+      "Marketing creatives for social platforms including posts, banners, and visuals that align with your brand tone.",
+  },
+  {
+    icon: Linkedin,
+    title: "LinkedIn & Personal Branding",
+    description:
+      "LinkedIn profile optimization and personal branding guidance to help you stand out professionally online.",
+  },
+  {
+    icon: Sparkles,
+    title: "Custom & On-Demand Work",
+    description:
+      "Have a unique idea or requirement? We also work on custom projects tailored to your exact needs, goals, and vision.",
   },
 ];
 
@@ -29,71 +54,66 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section-spacing bg-secondary/50" ref={ref}>
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      id="services"
+      className="section-spacing"
+    >
       <div className="section-container">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.1, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.p 
-            className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 font-medium"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.25, delay: 0.001 }}
-          >
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Services
-          </motion.p>
-          <motion.h2 
-            className="heading-section"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.25, delay: 0.001 }}
-          >
-            What we create
-          </motion.h2>
+          </p>
+          <h2 className="heading-section mb-4">What we do</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            End-to-end digital solutions designed to help students, creators,
+            and businesses build a strong and professional online presence.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-          <motion.div
-            key={service.title}
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.15, delay: index * 0.02 }}
-            
-            whileHover={{ 
-              y: -6,
-              scale: 1.04,
-              boxShadow: "0 12px 28px rgba(255,255,255,0.15)",
-              borderColor: "rgba(255,255,255,0.25)",
-              transition: {          // ✅ hover animation speed here
-                type: "spring",
-                stiffness: 520,
-                damping: 18,
-              }
-            }}
-            
-            className="bg-background border border-border rounded-xl p-8 transition-all duration-100 cursor-pointer group"
-          >
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              whileHover={{
+                y: -6,
+                boxShadow: "0 12px 32px rgba(255,255,255,0.15)",
+              }}
+              className="h-full rounded-2xl 
+              bg-white/5 backdrop-blur-xl 
+              border border-white/10 
+              p-8 flex flex-col"
+            >
+              <service.icon
+                className="w-10 h-10 text-foreground mb-6"
+                strokeWidth={1.5}
+              />
 
-              <motion.div
-                whileHover={{ scale: 1.12, rotate: 4 }}
-                transition={{ type: "spring", stiffness: 900, damping: 14 }}
-                className="inline-block"
-              >
-                <service.icon className="w-10 h-10 text-foreground mb-6" strokeWidth={1.5} />
-              </motion.div>
-              <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight group-hover:text-foreground/90 transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                {service.description}
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

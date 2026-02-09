@@ -2,18 +2,33 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const words = ["Show", "your", "work"];
-  
+
   return (
-<section className="min-h-screen w-full flex items-center justify-center pt-20 md:pt-0 relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen w-full flex items-center justify-center pt-20 md:pt-0 relative overflow-hidden"
+    >
       {/* Animated background gradient */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-30"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.15 }}
         transition={{ duration: 2 }}
-      > 
-        <div className="absolute top-1/4 left-1/4 w-[420px] h-[420px] bg-foreground/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-[360px] h-[360px] bg-foreground/5 rounded-full blur-3xl" />
+      >
+        <motion.div
+          animate={{ y: [0, -40, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-[420px] h-[420px] bg-foreground/10 rounded-full blur-3xl"
+        />
+
+        <motion.div
+          animate={{ y: [0, 40, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-1/4 right-1/4 w-[360px] h-[360px] bg-foreground/10 rounded-full blur-3xl"
+        />
+
 
       </motion.div>
 
@@ -31,10 +46,10 @@ const HeroSection = () => {
                   key={word}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    delay: 0.3 + i * 0.1, 
-                    duration: 0.6, 
-                    ease: "easeOut" 
+                  transition={{
+                    delay: 0.3 + i * 0.1,
+                    duration: 0.6,
+                    ease: "easeOut"
                   }}
                   className="inline-block"
                 >
@@ -42,7 +57,7 @@ const HeroSection = () => {
                 </motion.span>
               ))}
             </span>
-            <motion.span 
+            <motion.span
               className="block text-muted-foreground mt-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -51,18 +66,18 @@ const HeroSection = () => {
               professionally
             </motion.span>
           </h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            Portfolio decks & personal websites for students, creators, and startups.
+            Creative Designs & Websites for students, creators and startups.
             <span className="block mt-2 text-foreground/80 font-medium">Built by students. Designed for growth.</span>
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +90,7 @@ const HeroSection = () => {
               className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold tracking-wide bg-foreground text-background rounded-full transition-all duration-300 w-full sm:w-auto"
             >
               Get Started
-              <motion.span 
+              <motion.span
                 className="ml-2"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -83,7 +98,7 @@ const HeroSection = () => {
                 →
               </motion.span>
             </motion.a>
-            
+
             <motion.a
               href="#services"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
@@ -112,7 +127,8 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
+
   );
 };
 

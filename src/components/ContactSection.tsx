@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight, Linkedin, Instagram } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import { Linkedin, Instagram, } from "lucide-react";
+import SocialIcon from "@/components/SocialIcons";
+
 
 const ContactSection = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const [formData, setFormData] = useState({
@@ -62,7 +62,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-spacing border-t border-border" ref={ref}>
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      id="contact"
+      className="section-spacing"
+    >
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <motion.div
@@ -105,7 +112,6 @@ const ContactSection = () => {
             >
               <a
                 href="mailto:nexustanishq@gmail.com"
-                target="_blank"
                 className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
@@ -125,10 +131,10 @@ const ContactSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-6 max-w-sm rounded-2xl 
-  bg-white/5 backdrop-blur-xl 
-  border border-white/10 
-  shadow-[0_8px_32px_rgba(0,0,0,0.35)] 
-  p-5"
+              bg-white/5 backdrop-blur-xl 
+              border border-white/10 
+              shadow-[0_8px_32px_rgba(0,0,0,0.35)] 
+              p-5"
             >
               <h4 className="text-lg font-semibold text-foreground">
                 Tanishq Mangal
@@ -145,21 +151,20 @@ const ContactSection = () => {
               </p>
 
               <div className="flex items-center gap-4 mt-4">
-                <a
-                  href="https://www.linkedin.com/in/tanishq-mangal-643734304"
-                  target="_blank"
-                  className="text-muted-foreground hover:text-white transition"
-                >
-                  <Linkedin size={18} />
-                </a>
+  <SocialIcon
+    icon={<Linkedin size={18} />}
+    label="LinkedIn"
+    href="https://www.linkedin.com/in/tanishq-mangal-643734304"
+  />
 
-                <a 
-                href="https://www.instagram.com/_tanishqmangal_?igsh=d3EycHZseWl3NnNo" 
-                target="_blank"
-                className="text-muted-foreground hover:text-white transition">
-                  <Instagram size={18} />
-                </a>
-              </div>
+  <SocialIcon
+    icon={<Instagram size={18} />}
+    label="Instagram"
+    href="https://www.instagram.com/_tanishqmangal_?igsh=d3EycHZseWl3NnNo"
+  />
+</div>
+
+
             </motion.div>
 
           </motion.div>
@@ -212,7 +217,7 @@ const ContactSection = () => {
                 }}
                 required
                 className="w-full px-5 py-4 bg-secondary/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:border-foreground/50 transition-all duration-300"
-                placeholder="your@email.com"
+                placeholder="your@gmail.com"
               />
             </motion.div>
             {emailError && (
@@ -291,7 +296,7 @@ transition-all duration-300 inline-flex items-center justify-center gap-3"
         </div>
       )}
 
-    </section>
+    </motion.section>
   );
 };
 
