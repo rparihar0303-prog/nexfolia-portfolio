@@ -12,7 +12,7 @@ const steps = [
     number: "02",
     title: "Design & build",
     description:
-      "Our team crafts your website or portfolio deck with attention to every detail, focusing on clarity and aesthetics.",
+      "Our team crafts your designs and website with attention to every detail, focusing on clarity and aesthetics.",
   },
   {
     number: "03",
@@ -24,7 +24,7 @@ const steps = [
     number: "04",
     title: "Final delivery",
     description:
-      "Receive your polished, ready-to-use website or portfolio deck. Launch with confidence.",
+      "Receive your polished, ready-to-use designs or website. Launch with confidence.",
   },
 ];
 

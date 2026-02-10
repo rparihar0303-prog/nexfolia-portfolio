@@ -31,7 +31,7 @@ const Footer = () => {
             />
 
             <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-              Student-led digital studio creating clean, modern websites and portfolios.
+              Student-led digital studio creating clean, designs and websites.
             </p>
           </motion.div>
 

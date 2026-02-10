@@ -4,32 +4,32 @@ import { ExternalLink, ArrowLeft, ImageOff } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const projectsData = {
-//     designs: [
-//         {
-//             title: "Instagram Poster Series",
-//             description:
-//                 "A modern social media campaign designed to improve engagement and brand recognition.",
-//             tech: ["Canva", "Illustrator"],
-//             images: [],
-//             live: "#",
-//         },
-//         {
-//             title: "Startup Branding Kit",
-//             description:
-//                 "Complete branding package including logo, banners, and pitch visuals.",
-//             tech: ["Figma", "Illustrator"],
-//             images: [],
-//             live: "#",
-//         },
-//           {
-//             title: "UI/UX Designs",
-//             description:
-//                  "Modern UI/UX designs focused on usability, clean layout, and engaging user experience.",
-//             tech: ["Figma", "Illustrator"],
-//             images: [],
-//             live: "/loginpage.png",
-//         },
-//     ],
+    designs: [
+        {
+            title: "Instagram Poster Series",
+            description:
+                "A modern social media campaign designed to improve engagement and brand recognition.",
+            tech: ["Canva", "Illustrator"],
+            images: [],
+            live: "/Instagram_poster_nexfolia.png",
+        },
+        // {
+        //     title: "Startup Branding Kit",
+        //     description:
+        //         "Complete branding package including logo, banners, and pitch visuals.",
+        //     tech: ["Figma", "Illustrator"],
+        //     images: [],
+        //     live: "#",
+        // },
+          {
+            title: "UI/UX Designs",
+            description:
+                 "Modern UI/UX designs focused on usability, clean layout, and engaging user experience.",
+            tech: ["Figma", "Illustrator"],
+            images: [],
+            live: "/loginpage.png",
+        },
+    ],
 
     portfolios: [
         {
