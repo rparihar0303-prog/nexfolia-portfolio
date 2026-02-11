@@ -111,7 +111,7 @@ const ContactSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <a
-                href="mailto:nexustanishq@gmail.com"
+                href="mailto:nexfolia.in@gmail.com"
                 className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
@@ -119,13 +119,13 @@ const ContactSection = () => {
                 </div>
 
                 <span className="font-semibold text-lg">
-                  nexustanishq@gmail.com
+                  nexfolia.in@gmail.com
                 </span>
               </a>
             </motion.div>
 
 
-            {/* Profile Info Card */}
+            {/* Profile Info Card
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -165,7 +165,7 @@ const ContactSection = () => {
 </div>
 
 
-            </motion.div>
+            </motion.div> */}
 
           </motion.div>
 
