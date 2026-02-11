@@ -44,12 +44,12 @@ const Footer = () => {
           >
             <p className="text-muted-foreground font-medium">Founded 2026</p>
             <motion.a
-              href="mailto:nexustanishq@gmail.com"
+              href="mailto:nexfolia.in@gmail.com"
               className="text-foreground hover:text-muted-foreground transition-colors duration-300 font-medium"
               whileHover={{ x: -5 }}
               transition={{ duration: 0.2 }}
             >
-              nexustanishq@gmail.com
+              nexfolia.in@gmail.com
             </motion.a>
           </motion.div>
 
