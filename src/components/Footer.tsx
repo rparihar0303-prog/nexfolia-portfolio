@@ -1,79 +1,138 @@
-import { motion } from "framer-motion";
-import nexfoliaLogo from "../assets/my-logo.png";
+import { Linkedin, Instagram, } from "lucide-react";
+import { Mail } from "lucide-react";
+import SocialIcon from "@/components/SocialIcons";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary/50 border-t border-border py-16 md:py-20">
-      <div className="section-container">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <motion.img
-              src={nexfoliaLogo}
-              alt="Nexfolia Studio"
-              className="h-12 md:h-14 w-auto mb-4 cursor-pointer will-change-transform"
+    <footer className="relative bg-background border-t border-border/50 mt-24 overflow-hidden">
 
-              whileHover={{
-                scale: 1.02,
-                rotate: -1,
-                boxShadow: "0px 0px 20px rgba(255,255,255,0.13)"
-              }}
+      {/* Subtle Glow Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full" />
+      </div>
 
-              transition={{
-                type: "spring",
-                stiffness: 1000,
-                damping: 20
-              }}
-            />
+      <div className="section-container py-20">
 
-            <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-              Student-led digital studio creating clean, designs and websites.
+        <div className="grid md:grid-cols-[2fr_1fr_1fr_1fr] gap-16">
+
+          {/* Brand Section */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold tracking-wide">
+              NEXFOLIA
+            </h3>
+
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Digital studio crafting modern websites, branding, and creative systems built for growth.
             </p>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col items-start md:items-end gap-3 text-sm"
-          >
-            <p className="text-muted-foreground font-medium">Founded 2026</p>
-            <motion.a
-              href="mailto:nexfolia.in@gmail.com"
-              className="text-foreground hover:text-muted-foreground transition-colors duration-300 font-medium"
-              whileHover={{ x: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              nexfolia.in@gmail.com
-            </motion.a>
-          </motion.div>
+            <div className="space-y-3 pt-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Mail size={16} />
+                <a
+                  href="mailto:nexustanishq@gmail.com"
+                  className="hover:text-foreground transition"
+                >
+                  nexustanishq@gmail.com
+                </a>
+              </div>
 
+              <div className="flex items-center gap-2">
+                <Mail size={16} />
+                <a
+                  href="mailto:nexusrohit18@gmail.com"
+                  className="hover:text-foreground transition"
+                >
+                  nexusrohit18@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 mt-6">
+
+              <SocialIcon
+                icon={<Linkedin size={18} />}
+                label="LinkedIn"
+                href="https://www.linkedin.com/company/nexfolia-studio/"
+              />
+
+              <SocialIcon
+                icon={<Instagram size={18} />}
+                label="Instagram"
+                href="https://www.instagram.com/nexfoliastudio"
+              />
+
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold mb-6 text-foreground">
+              Services
+            </h4>
+
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <a href="#services" className="block hover:text-foreground transition">
+                Websites & Portfolios
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                Portfolio Decks & Presentations
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                Branding & Identity
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                Social Media Creatives
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                LinkedIn & Personal Branding
+              </a>
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold mb-6 text-foreground">
+              Company
+            </h4>
+
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <a href="#home" className="block hover:text-foreground transition">
+                Home
+              </a>
+              <a href="#about" className="block hover:text-foreground transition">
+                About
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                Services
+              </a>
+              <a href="#projects" className="block hover:text-foreground transition">
+                Projects
+              </a>
+              <a href="#contact" className="block hover:text-foreground transition">
+                Contact
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-semibold mb-6 text-foreground">
+              Legal
+            </h4>
+
+            <div className="space-y-4 text-sm text-muted-foreground">
+
+              <p>Privacy Policy</p>
+              <p>Terms & Conditons</p>
+            </div>
+          </div>
 
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-12 pt-8 border-t border-border"
-        />
+        {/* Bottom Bar */}
+        <div className="border-t border-border/50 mt-16 pt-8 text-center text-sm text-muted-foreground">
+          <p>© 2026 Nexfolia Studio. All rights reserved.</p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"
-        >
-          <p className="font-medium">© 2026 Nexfolia Studio. All rights reserved.</p>
-          <p className="text-foreground/60">Built by students. Designed for growth.</p>
-        </motion.div>
       </div>
     </footer>
   );

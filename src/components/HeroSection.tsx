@@ -5,110 +5,152 @@ const HeroSection = () => {
 
   return (
     <motion.section
+      id="home"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="min-h-screen w-full flex items-center justify-center pt-20 md:pt-0 relative overflow-hidden"
-    >
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.15 }}
-        transition={{ duration: 2 }}
-      >
+className="min-h-screen w-full flex items-center justify-center pt-24 md:pt-20 relative overflow-hidden px-4 sm:px-6"    >
+      {/* Glass Blue Floating Bubbles */}
+      <motion.div className="absolute inset-0 overflow-hidden">
+
+        {/* Bubble 1 */}
         <motion.div
-          animate={{ y: [0, -40, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-[420px] h-[420px] bg-foreground/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-[18%] w-[260px] h-[260px] rounded-full
+               bg-blue-500/10 backdrop-blur-xl
+               border border-blue-400/20
+               shadow-[0_0_80px_rgba(59,130,246,0.25)]"
+          animate={{
+            y: [0, -40, 0],
+            x: [0, 30, 0],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Bubble 2 */}
+        <motion.div
+          className="absolute bottom-1/4 right-[15%] w-[320px] h-[320px] rounded-full
+               bg-gradient-to-br from-blue-400/15 to-cyan-300/10
+               backdrop-blur-xl
+               border border-blue-300/20
+               shadow-[0_0_100px_rgba(56,189,248,0.25)]"
+          animate={{
+            y: [0, 50, 0],
+            x: [0, -25, 0],
+            scale: [1, 1.08, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
 
         <motion.div
-          animate={{ y: [0, 40, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-1/4 w-[360px] h-[360px] bg-foreground/10 rounded-full blur-3xl"
+          className="absolute top-[18%] left-[10%] w-[90px] h-[90px] rounded-full
+             bg-gradient-to-br from-blue-400/20 to-cyan-300/10
+             backdrop-blur-md
+             border border-blue-300/30
+             shadow-[0_0_40px_rgba(59,130,246,0.35)]"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 15, 0],
+            scale: [1, 1.08, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
 
+        <motion.div
+          className="absolute bottom-[15%] right-[12%] w-[70px] h-[70px] rounded-full
+             bg-gradient-to-tr from-blue-500/15 to-indigo-400/10
+             backdrop-blur-md
+             border border-blue-400/20
+             shadow-[0_0_35px_rgba(99,102,241,0.35)]"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, -15, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
 
       </motion.div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
-        >
-          <h1 className="heading-display mb-6 overflow-hidden">
-            <span className="flex flex-wrap justify-center gap-x-4">
-              {words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.3 + i * 0.1,
-                    duration: 0.6,
-                    ease: "easeOut"
-                  }}
-                  className="inline-block"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-            <motion.span
-              className="block text-muted-foreground mt-2"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
-            >
-              professionally
-            </motion.span>
-          </h1>
-
-          <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed font-light"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-          >
-            Creative Designs & Websites for students, creators and startups.
-            <span className="block mt-2 text-foreground/80 font-medium">Built by students. Designed for growth.</span>
-          </motion.p>
+      {/* ✅ CENTERED BOX WRAPPER FIX */}
+      <div className="w-full px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255,255,255,0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold tracking-wide bg-foreground text-background rounded-full transition-all duration-300 w-full sm:w-auto"
-            >
-              Get Started
-              <motion.span
-                className="ml-2"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </motion.a>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-center mb-8">
+              <span className="block">Show your work</span>
+              <span className="block text-foreground/70 mt-2">
+                professionally
+              </span>
+            </h1>
 
-            <motion.a
-              href="#services"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold tracking-wide border-2 border-border text-foreground rounded-full transition-all duration-300 w-full sm:w-auto"
+            <motion.p
+              className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
             >
-              View Services
-            </motion.a>
+              Nexfolia builds refined brands and high-performance websites designed to help startups scale.
+              <span className="block mt-4 text-foreground font-semibold">
+                Build Digital Foundations
+                That Drive Growth.
+              </span>
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+            >
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255,255,255,0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold tracking-wide bg-foreground text-background rounded-full transition-all duration-300 w-full sm:w-auto"
+              >
+                Request a Proposal
+                <motion.span
+                  className="ml-2"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
+              </motion.a>
+
+              <motion.a
+                href="#services"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold tracking-wide border-2 border-border text-foreground rounded-full transition-all duration-300 w-full sm:w-auto"
+              >
+                View Services
+              </motion.a>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+        </div>
 
         {/* Scroll indicator */}
         <motion.div
@@ -128,7 +170,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
     </motion.section>
-
   );
 };
 

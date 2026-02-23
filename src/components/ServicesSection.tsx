@@ -75,7 +75,7 @@ const ServicesSection = () => {
           </p>
           <h2 className="heading-section mb-4">What we do</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            End-to-end digital solutions designed to help students, creators,
+            End-to-end digital solutions designed to help startups, creators,
             and businesses build a strong and professional online presence.
           </p>
         </motion.div>

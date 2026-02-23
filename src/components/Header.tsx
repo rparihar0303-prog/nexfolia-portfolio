@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import nexfoliaLogo from "@/assets/nexfolia-logo.png";
-import myLogo from "../assets/my-logo.png";
+import { ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   const navItems = [
+    { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
@@ -33,6 +32,30 @@ const Header = () => {
     },
   };
 
+  const servicesMenu = [
+    {
+      title: "Web & Digital",
+      items: [
+        "Websites & Portfolios",
+        "Portfolio Decks & Presentations",
+      ],
+    },
+    {
+      title: "Brand & Creative",
+      items: [
+        "Branding & Identity",
+        "Social Media Creatives",
+      ],
+    },
+    {
+      title: "Personal Growth",
+      items: [
+        "LinkedIn & Personal Branding",
+        "Custom & On-Demand Work",
+      ],
+    },
+  ];
+
   return (
     <>
       <motion.header
@@ -43,46 +66,77 @@ const Header = () => {
       >
         <div className="section-container">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <motion.a 
-              href="#" 
-              className="flex items-center gap-3 relative z-50 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.img 
-                src={myLogo} 
-                alt="Nexfolia Studio" 
-                className="h-10 md:h-12 w-auto"
-                
-                whileHover={{
-                  scale: 1.02,
-                  // rotate: 1,
-                  boxShadow: "0px 0px 18px rgba(255,255,255,0.20)"
-                }}
 
-                transition={{
-                  type: "spring",
-                  stiffness: 1000,
-                  damping: 20
-                }}
-              />
-            </motion.a>
+            <span className="uppercase tracking-widest text-lg md:text-xl font-semibold">
+              NEXFOLIA
+            </span>
 
-            
-            <nav className="hidden md:flex items-center gap-10">
-              {navItems.map((item, i) => (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * i, duration: 0.4 }}
-                  className="relative text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
-                </motion.a>
-              ))}
+
+            <nav className="hidden md:flex items-center gap-10 relative">
+              {navItems.map((item, i) =>
+                item.label === "Services" ? (
+                  <div key="services" className="relative group">
+
+                    {/* Services Button */}
+                    <span className="flex items-center gap-1 text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition cursor-pointer">
+                      Services
+                      <ChevronDown
+                        size={16}
+                        className="transition-transform duration-300 group-hover:rotate-180"
+                      />
+                    </span>
+
+                    {/* Mega Dropdown */}
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 top-10 
+                      w-[400px] opacity-0 invisible 
+                      group-hover:opacity-100 group-hover:visible
+                      transition-all duration-300 z-50"
+                    >
+                      <div
+                        className="rounded-2xl bg-background/95 backdrop-blur-xl 
+                        border border-border shadow-2xl 
+                        p-8 flex flex-col space-y-8"
+                      >
+                        {servicesMenu.map((section, index) => (
+                          <div key={index} className="flex flex-col space-y-3">
+
+                            {/* Section Title */}
+                            <h4 className="font-semibold text-foreground text-base">
+                              {section.title}
+                            </h4>
+
+                            {/* Items */}
+                            <div className="flex flex-col space-y-2">
+                              {section.items.map((service, i) => (
+                                <a
+                                  key={i}
+                                  href="/#services"
+                                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                                >
+                                  • {service}
+                                </a>
+                              ))}
+                            </div>
+
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * i, duration: 0.4 }}
+                    className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition"
+                  >
+                    {item.label}
+                  </motion.a>
+                )
+              )}
             </nav>
 
             <motion.a
@@ -94,28 +148,28 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
               className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold tracking-wide bg-foreground text-background rounded-full hover:bg-foreground/90 transition-all duration-300"
             >
-              Get Started
+              Start Your Project
             </motion.a>
 
             {/* Mobile menu button */}
-            <motion.button 
+            <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-foreground relative z-50"
               aria-label="Menu"
               whileTap={{ scale: 0.9 }}
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <motion.span 
+                <motion.span
                   className="w-full h-0.5 bg-foreground origin-left"
                   animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? -1 : 0 }}
                   transition={{ duration: 0.3 }}
                 />
-                <motion.span 
+                <motion.span
                   className="w-full h-0.5 bg-foreground"
                   animate={{ opacity: isMenuOpen ? 0 : 1, x: isMenuOpen ? 20 : 0 }}
                   transition={{ duration: 0.3 }}
                 />
-                <motion.span 
+                <motion.span
                   className="w-full h-0.5 bg-foreground origin-left"
                   animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? 1 : 0 }}
                   transition={{ duration: 0.3 }}

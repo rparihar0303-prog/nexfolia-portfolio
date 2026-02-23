@@ -22,7 +22,7 @@ const reasons = [
   {
     icon: Rocket,
     title: "Built for growth",
-    description: "Designed by students who understand your journey. We create foundations that scale with your ambitions.",
+    description: "Designed for growth who understand your journey. We create foundations that scale with your ambitions.",
   },
 ];
 

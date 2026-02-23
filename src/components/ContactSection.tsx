@@ -11,6 +11,7 @@ const ContactSection = () => {
 
   const [formData, setFormData] = useState({
     name: "",
+    contact: "",
     email: "",
     message: "",
   });
@@ -22,34 +23,38 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formRef.current) return;
+    const templateParams = {
+      name: formData.name,
+      contact: formData.contact,
+      email: formData.email,
+      message: formData.message,
+    };
 
     emailjs
-      .sendForm(
-        "service_cksr9es",
+      .send(
+        "service_5zmn9k9",
         "template_7a71b9o",
-        formRef.current,
-        "adz00TqErsRHglHMY"
+        templateParams,
+        "eZSJR3WOt2rOp-Ebj"
       )
-      .then(() => {
-        setShowSuccess(true);
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
 
-        setTimeout(() => {
-          setShowSuccess(false);
-        }, 3000);
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 3000);
 
         setFormData({
           name: "",
+          contact: "",
           email: "",
           message: "",
         });
       })
       .catch((error) => {
-        console.error("EmailJS Error:", error);
-        alert("❌ The message could not be sent. Please check your email configuration or try again later.");
+        console.error("EmailJS Error Details:", error);
+        alert("Error: " + JSON.stringify(error));
       });
   };
-
 
 
   const handleChange = (
@@ -103,69 +108,65 @@ const ContactSection = () => {
               discuss how we can help bring your vision to life.
             </motion.p>
 
-            {/* Email */}
-            <motion.div
-              whileHover={{ x: 4 }}
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <a
-                href="mailto:nexfolia.in@gmail.com"
-                className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300 group cursor-pointer"
+            <div className="mt-12 flex flex-col gap-5">
+
+              {/* Mini Praise Box 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-secondary/30 backdrop-blur-2xl border border-border rounded-2xl p-6 max-w-md hover:border-foreground/20 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300">
-                  <Mail className="w-5 h-5" strokeWidth={1.5} />
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  “Nexfolia helped us redefine our clothing brand online. The website perfectly captures our aesthetic and has significantly improved customer engagement and conversions.”
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      Priyansh Goyal
+                    </h4>
+                    <p className="text-xs text-muted-foreground">
+                      Founder, SupeeB
+                    </p>
+                  </div>
+
+                  <span className="text-xs text-foreground/60">
+                    ★★★★★
+                  </span>
                 </div>
+              </motion.div>
 
-                <span className="font-semibold text-lg">
-                  nexfolia.in@gmail.com
-                </span>
-              </a>
-            </motion.div>
+              {/* Mini Praise Box 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-secondary/30 backdrop-blur-2xl border border-border rounded-2xl p-6 max-w-md hover:border-foreground/20 transition-all duration-300"
+              >
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  “Nexfolia didn’t just design a website — they built a digital foundation that reflects our vision and supports our growth. Truly a reliable creative partner.”
+                </p>
 
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      Tushar Mangal
+                    </h4>
+                    <p className="text-xs text-muted-foreground">
+                      Founder, Supeebkart
+                    </p>
+                  </div>
 
-            {/* Profile Info Card
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-6 max-w-sm rounded-2xl 
-              bg-white/5 backdrop-blur-xl 
-              border border-white/10 
-              shadow-[0_8px_32px_rgba(0,0,0,0.35)] 
-              p-5"
-            >
-              <h4 className="text-lg font-semibold text-foreground">
-                Tanishq Mangal
-              </h4>
+                  <span className="text-xs text-foreground/60">
+                    ★★★★★
+                  </span>
+                </div>
+              </motion.div>
 
-              <p className="text-sm text-muted-foreground mt-1">
-                Founder & CEO – Nexfolia Studio
-              </p>
-
-              <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                Student entrepreneur focused on helping individuals build a strong and
-                professional digital presence through clean professional designs and
-                personalized websites.
-              </p>
-
-              <div className="flex items-center gap-4 mt-4">
-  <SocialIcon
-    icon={<Linkedin size={18} />}
-    label="LinkedIn"
-    href="https://www.linkedin.com/in/tanishq-mangal-643734304"
-  />
-
-  <SocialIcon
-    icon={<Instagram size={18} />}
-    label="Instagram"
-    href="https://www.instagram.com/_tanishqmangal_?igsh=d3EycHZseWl3NnNo"
-  />
-</div>
-
-
-            </motion.div> */}
+            </div>
 
           </motion.div>
 
@@ -201,6 +202,27 @@ const ContactSection = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2 tracking-wide">
+                Contact no. (Optional)
+              </label>
+              <input
+                type="tel"
+                id="contact"
+                name="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                required
+                className="w-full px-5 py-4 bg-secondary/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground/30 focus:border-foreground/50 transition-all duration-300"
+                placeholder="989*******"
+              />
+            </motion.div>
+
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2 tracking-wide">
@@ -225,11 +247,6 @@ const ContactSection = () => {
                 {emailError}
               </p>
             )}
-            {/* {successMessage && (
-            <p className="text-green-500 text-sm mt-2">
-            {successMessage}
-            </p>
-          )} */}
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -261,9 +278,9 @@ const ContactSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="w-full sm:w-auto whitespace-nowrap px-10 py-4 text-[15px] font-semibold tracking-wide text-white rounded-full 
-bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.15)]
-hover:bg-white/20 hover:shadow-[0_3px_10px_rgba(255,255,255,0.25)]
-transition-all duration-300 inline-flex items-center justify-center gap-3"
+                bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.15)]
+                hover:bg-white/20 hover:shadow-[0_3px_10px_rgba(255,255,255,0.25)]
+                transition-all duration-300 inline-flex items-center justify-center gap-3"
               >
                 Send Message
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -274,9 +291,9 @@ transition-all duration-300 inline-flex items-center justify-center gap-3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto whitespace-nowrap px-8 py-4 text-[15px] font-semibold tracking-wide text-white rounded-full 
-bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.15)]
-hover:bg-white/20 hover:shadow-[0_3px_10px_rgba(255,255,255,0.25)]
-transition-all duration-300 inline-flex items-center justify-center gap-3"
+                bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.15)]
+                hover:bg-white/20 hover:shadow-[0_3px_10px_rgba(255,255,255,0.25)]
+                transition-all duration-300 inline-flex items-center justify-center gap-3"
 
               >
                 💬 Chat on WhatsApp
@@ -299,5 +316,6 @@ transition-all duration-300 inline-flex items-center justify-center gap-3"
     </motion.section>
   );
 };
+
 
 export default ContactSection;

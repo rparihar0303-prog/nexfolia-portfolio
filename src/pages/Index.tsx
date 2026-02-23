@@ -7,6 +7,7 @@ import ProcessSection from "@/components/ProcessSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ClientsSection from "@/components/ClientsSection";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -31,18 +32,19 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
-      <main>
+      <main className="px-4 sm:px-6 lg:px-8">
         <HeroSection />
-        <AboutSection />
         <ServicesSection />
-        <WhySection />
-        <ProcessSection />
         <ProjectsSection />
+        <AboutSection />
+        <ProcessSection />
+        <WhySection />
+        <ClientsSection />
         <ContactSection />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };
