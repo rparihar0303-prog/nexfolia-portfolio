@@ -150,7 +150,7 @@ const AboutSection = () => {
                 <SocialIcon
                   icon={<Instagram size={18} />}
                   label="Instagram"
-                  href="https://www.instagram.com/nexfoliastudio?igsh=c2x5YnUxeDhqc3k2"
+                  href="https://www.instagram.com/nexfolia.in?igsh=MTF6MXhna200MXl5Yw=="
                 />
               </div>
             </motion.div>

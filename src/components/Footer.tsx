@@ -57,7 +57,7 @@ const Footer = () => {
               <SocialIcon
                 icon={<Instagram size={18} />}
                 label="Instagram"
-                href="https://www.instagram.com/nexfoliastudio"
+                href="https://www.instagram.com/nexfolia.in?igsh=MTF6MXhna200MXl5Yw=="
               />
 
             </div>
