@@ -38,10 +38,9 @@ const Testimonials = () => {
             Testimonials
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-            What Our Clients <br className="hidden sm:block" />
-            Say About Nexfolia
-          </h2>
+        <h2 className="heading-section mb-4">
+        What Our Clients <br /> Say About Nexfolia
+        </h2>
         </motion.div>
 
         {/* Grid */}

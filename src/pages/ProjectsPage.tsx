@@ -40,6 +40,20 @@ const projectsData = {
             live: "https://rohit-parihar-portfolio.vercel.app/",
         },
     ],
+    websites: [
+    {
+        title: "Startup Website",
+        description:
+            "A clean and scalable website built for early-stage startups to present ideas, build trust, and convert visitors.",
+        tech: ["React", "Tailwind", "Framer Motion"],
+        images: [
+            "/startup1.png",
+            "/startup2.png",
+            "/startup3.png"
+        ],
+        live: "https://supeeb-website.vercel.app/",
+    },
+],
 
 };
 

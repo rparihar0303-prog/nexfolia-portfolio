@@ -71,19 +71,19 @@ const Footer = () => {
 
             <div className="space-y-3 text-sm text-muted-foreground">
               <a href="#services" className="block hover:text-foreground transition">
-                Websites & Portfolios
-              </a>
-              <a href="#services" className="block hover:text-foreground transition">
-                Portfolio Decks & Presentations
-              </a>
-              <a href="#services" className="block hover:text-foreground transition">
                 Branding & Identity
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                LinkedIn & Personal Branding
               </a>
               <a href="#services" className="block hover:text-foreground transition">
                 Social Media Creatives
               </a>
               <a href="#services" className="block hover:text-foreground transition">
-                LinkedIn & Personal Branding
+                Websites & Portfolios
+              </a>
+              <a href="#services" className="block hover:text-foreground transition">
+                Portfolio Decks & Presentations
               </a>
             </div>
           </div>
