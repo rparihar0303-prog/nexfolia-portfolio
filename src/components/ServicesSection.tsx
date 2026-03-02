@@ -12,6 +12,24 @@ import {
 
 const services = [
   {
+    icon: Palette,
+    title: "Branding & Identity",
+    description:
+      "Logo design and brand identity systems that define your visual presence and make your brand instantly recognizable.",
+  },
+  {
+    icon: Linkedin,
+    title: "LinkedIn & Personal Branding",
+    description:
+      "LinkedIn profile optimization and personal branding guidance to help you stand out professionally online.",
+  },
+    {
+    icon: Layout,
+    title: "Social Media Creatives",
+    description:
+      "Marketing creatives for social platforms including posts, banners, and visuals that align with your brand tone.",
+  },
+  {
     icon: Globe,
     title: "Websites & Portfolios",
     description:
@@ -22,24 +40,6 @@ const services = [
     title: "Portfolio Decks & Presentations",
     description:
       "High-impact PDF and PPT portfolio decks, posters, banners, and presentation designs for jobs, clients, and pitches.",
-  },
-  {
-    icon: Palette,
-    title: "Branding & Identity",
-    description:
-      "Logo design and brand identity systems that define your visual presence and make your brand instantly recognizable.",
-  },
-  {
-    icon: Layout,
-    title: "Social Media Creatives",
-    description:
-      "Marketing creatives for social platforms including posts, banners, and visuals that align with your brand tone.",
-  },
-  {
-    icon: Linkedin,
-    title: "LinkedIn & Personal Branding",
-    description:
-      "LinkedIn profile optimization and personal branding guidance to help you stand out professionally online.",
   },
   {
     icon: Sparkles,

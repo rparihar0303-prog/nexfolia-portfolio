@@ -13,14 +13,7 @@ const projectsData = {
             images: [],
             live: "/Instagram_poster_nexfolia.png",
         },
-        // {
-        //     title: "Startup Branding Kit",
-        //     description:
-        //         "Complete branding package including logo, banners, and pitch visuals.",
-        //     tech: ["Figma", "Illustrator"],
-        //     images: [],
-        //     live: "#",
-        // },
+  
           {
             title: "UI/UX Designs",
             description:
@@ -48,16 +41,6 @@ const projectsData = {
         },
     ],
 
-    // websites: [
-    //     {
-    //         title: "Startup Landing Page",
-    //         description:
-    //             "Conversion-focused landing page built for early-stage startups.",
-    //         tech: ["React", "Vite", "Tailwind"],
-    //         images: [],
-    //         live: "#",
-    //     },
-    // ],
 };
 
 /* Project Card Component */

@@ -8,7 +8,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ClientsSection from "@/components/ClientsSection";
-
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -37,6 +37,7 @@ const Index = () => {
       <main className="px-4 sm:px-6 lg:px-8">
         <HeroSection />
         <ServicesSection />
+        <TestimonialsSection />
         <ProjectsSection />
         <AboutSection />
         <ProcessSection />

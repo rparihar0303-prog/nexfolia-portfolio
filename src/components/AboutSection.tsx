@@ -135,8 +135,7 @@ const AboutSection = () => {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We help startups and brands build a strong online presence through thoughtful design,
-                clear messaging, and modern digital tools—making professional branding and web presence
-                accessible, affordable, and effective.
+                clear messaging, and modern digital tools—A strategic digital studio focused on clarity, performance, and growth.
               </p>
 
               {/* Social Links */}

@@ -6,7 +6,7 @@ import { Wallet, Palette, Zap, Rocket } from "lucide-react";
 const reasons = [
   {
     icon: Wallet,
-    title: "Beginner-friendly pricing",
+    title: "Transparent pricing",
     description: "Quality design shouldn't break the bank. We offer fair rates tailored for Beginner and early-stage ventures.",
   },
   {

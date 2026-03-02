@@ -108,66 +108,6 @@ const ContactSection = () => {
               discuss how we can help bring your vision to life.
             </motion.p>
 
-            <div className="mt-12 flex flex-col gap-5">
-
-              {/* Mini Praise Box 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-secondary/30 backdrop-blur-2xl border border-border rounded-2xl p-6 max-w-md hover:border-foreground/20 transition-all duration-300"
-              >
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  “Nexfolia helped us redefine our clothing brand online. The website perfectly captures our aesthetic and has significantly improved customer engagement and conversions.”
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-sm font-semibold text-foreground">
-                      Priyansh Goyal
-                    </h4>
-                    <p className="text-xs text-muted-foreground">
-                      Founder, SupeeB
-                    </p>
-                  </div>
-
-                  <span className="text-xs text-foreground/60">
-                    ★★★★★
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Mini Praise Box 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-secondary/30 backdrop-blur-2xl border border-border rounded-2xl p-6 max-w-md hover:border-foreground/20 transition-all duration-300"
-              >
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  “Nexfolia didn’t just design a website — they built a digital foundation that reflects our vision and supports our growth. Truly a reliable creative partner.”
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-sm font-semibold text-foreground">
-                      Tushar Mangal
-                    </h4>
-                    <p className="text-xs text-muted-foreground">
-                      Founder, Supeebkart
-                    </p>
-                  </div>
-
-                  <span className="text-xs text-foreground/60">
-                    ★★★★★
-                  </span>
-                </div>
-              </motion.div>
-
-            </div>
-
           </motion.div>
 
           <motion.form

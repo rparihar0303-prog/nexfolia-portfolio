@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
-  const words = ["Show", "your", "work"];
+  const words = ["Built", "for", "Startups"];
 
   return (
     <motion.section
@@ -98,9 +98,9 @@ className="min-h-screen w-full flex items-center justify-center pt-24 md:pt-20 r
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-center mb-8">
-              <span className="block">Show your work</span>
+              <span className="block">Built for Startups</span>
               <span className="block text-foreground/70 mt-2">
-                professionally
+                That Mean Business
               </span>
             </h1>
 
@@ -112,8 +112,7 @@ className="min-h-screen w-full flex items-center justify-center pt-24 md:pt-20 r
             >
               Nexfolia builds refined brands and high-performance websites designed to help startups scale.
               <span className="block mt-4 text-foreground font-semibold">
-                Build Digital Foundations
-                That Drive Growth.
+                Designing Digital Foundations for Modern Startups
               </span>
             </motion.p>
 
